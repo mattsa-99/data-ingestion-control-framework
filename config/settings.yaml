@@ -1,0 +1,26 @@
+# General Project Configuration
+project:
+  name: "Data Ingestion Framework"
+  version: "1.0.0"
+  description: "Metadata-driven framework for automated data ingestion using Python and PostgreSQL"
+
+# Database Configuration
+# These values will replace the {{placeholders}} in your SQL templates
+database:
+  schema_name: "conf"
+  table_control: "ingestion_control"
+  table_log: "audit_log"
+
+# Connection Details (Used by src/python/utils.py)
+# Recommendation: Use environment variables for sensitive data like passwords
+connection:
+  host: "localhost"
+  port: 5432
+  database: "ingestion_control"
+  user: "postgres"
+  # password: "use_env_var_instead" 
+
+# Framework Parameters
+parameters:
+  default_is_active: 1
+  date_format: "YYYY-MM-DD"
